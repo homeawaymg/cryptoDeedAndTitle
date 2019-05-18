@@ -1,0 +1,158 @@
+PS F:\Nodeprojects\udacity\Term2\cryptoDeedAndTitle\eth-contracts> truffle migrate --network rinkeby                    Compiling .\contracts\ERC721Mintable.sol...
+Compiling .\contracts\Oraclize.sol...
+Compiling .\contracts\verifier.sol...
+Writing artifacts to .\build\contracts
+
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 7790561
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.611900120000000004
+   > gas used:            258162
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000516324 ETH
+
+   -------------------------------------
+   > Total cost:         0.000516324 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'ERC721Mintable'
+   --------------------------
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.605241064000000004
+   > gas used:            3302500
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.006605 ETH
+
+
+   Deploying 'Verifier'
+   --------------------
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.601691196000000004
+   > gas used:            1774934
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.003549868 ETH
+
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.590674310000000004
+   > gas used:            5508443
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.011016886 ETH
+
+   -------------------------------------
+   > Total cost:         0.021171754 ETH
+
+
+Summary
+=======
+> Total deployments:   4
+> Final cost:          0.021688078 ETH
+
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 7795836
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x4a068b0a5dab3196dc559cb3120ea53fd04fc2c6c336ad587b63679a2e1d8bd3
+   > Blocks: 0            Seconds: 4
+   > contract address:    0x3d82e53f25F1a45EaAA8378cE1B7544cB5AB08B8
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.606953204000000004
+   > gas used:            273162
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00546324 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00546324 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'ERC721Mintable'
+   --------------------------
+   > transaction hash:    0x636ec88da0bca01c81931cdabd24cdb48225ee920951898cb1739209d8c77624
+   > Blocks: 0            Seconds: 12
+   > contract address:    0x1A4bF38090919267Ed622055beA02dbD6FA2C24D
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.536462644000000004
+   > gas used:            3482500
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.06965 ETH
+
+
+   Deploying 'Verifier'
+   --------------------
+   > transaction hash:    0x9d71e13b87c296459c7de549c908409748d78fafc72fac918d6bb6cd372d10bb
+   > Blocks: 0            Seconds: 12
+   > contract address:    0xD3D5798664cA8ef16618e63d25aAA3cAC35EcceC
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.500963964000000004
+   > gas used:            1774934
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03549868 ETH
+
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > transaction hash:    0xae9d38f2ff4cc9ef88179fe1d4ef87b44454ec6e31a2113c0bb30da184c83e23
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xAEF14825f5114D0CE326a400Bf8a630f990F5407
+   > account:             0xa8Dd7B8f24311bd14fcB9DC2fd7b5cB51b7e74F0
+   > balance:             29.387195104000000004
+   > gas used:            5688443
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.11376886 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.21891754 ETH
+
+
+Summary
+=======
+> Total deployments:   4
+> Final cost:          0.22438078 ETH
