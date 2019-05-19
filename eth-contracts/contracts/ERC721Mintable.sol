@@ -48,6 +48,42 @@ contract Ownable {
 //  4) create 'whenNotPaused' & 'paused' modifier that throws in the appropriate situation
 //  5) create a Paused & Unpaused event that emits the address that triggered the event
 
+contract Pausable {
+    bool _paused;
+    address _owner;
+    modifier whenNotPaused() {
+        require(_paused != true, "Contract is paused and not available for transacting");
+        _;
+    }
+
+    modifier paused() {
+        require(_paused == true, "Contract is NOT paused");
+        _;
+    }
+
+    modifier onlyOwner() {
+        require(_owner == msg.sender, "Contract can only be paused/unpaused by owner");
+        _;
+    }
+
+    event Paused(address whoDidIt);
+    event UnPaused(address whoDidIt);
+
+    function setPaused(bool isPaused) public onlyOwner {
+        _paused = isPaused;
+        if (_paused == true) {
+            emit Paused(msg.sender);
+        }else{
+            emit UnPaused(msg.sender);
+        }
+    }
+
+    constructor () internal {
+        _paused = false;
+        _owner = msg.sender;
+    }
+}
+
 contract ERC165 is Ownable {
     bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
     /*
@@ -65,36 +101,8 @@ contract ERC165 is Ownable {
      * implement ERC165 itself
      */
 
-    bool _paused;
-
-    modifier whenNotPaused() {
-        require(_paused != true, "ERC165 is paused and not available for transacting");
-        _;
-    }
-
-    modifier paused() {
-        require(_paused == true, "ERC165 is NOT paused");
-        _;
-    }
-
-
-
-    event Paused(address whoDidIt);
-    event UnPaused(address whoDidIt);
-
-    function setPaused(bool isPaused) public onlyOwner {
-        _paused = isPaused;
-        if (_paused == true) {
-            emit Paused(msg.sender);
-        }else{
-            emit UnPaused(msg.sender);
-        }
-    }
-
-
     constructor () internal {
         _registerInterface(_INTERFACE_ID_ERC165);
-        _paused = false;
     }
 
     /**
@@ -114,8 +122,7 @@ contract ERC165 is Ownable {
 }
 
 
-
-contract ERC721 is /*Pausable,*/ ERC165 {
+contract ERC721 is Pausable, ERC165 {
 
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
 
